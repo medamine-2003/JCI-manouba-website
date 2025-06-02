@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.05, // Trigger when 5% of the element is visible
+    threshold: 0.08, // Trigger when 8% of the element is visible
   };
 
   const fadeInElements = document.querySelectorAll(
