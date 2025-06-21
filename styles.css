@@ -286,10 +286,12 @@ nav {
   }
 }
 
-.btn {
+.hero .btn {
   display: inline-block;
-  background: var(--gradient-primary);
-  color: white;
+  background: var(
+    --gradient-primary
+  ); /* Uses linear-gradient(135deg, #3a67b1, #0097d7) */
+  color: var(--text-light); /* White text */
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 50px;
@@ -298,13 +300,13 @@ nav {
   font-size: 1.1rem;
   text-decoration: none;
   transition: all 0.4s ease;
-  box-shadow: var(--shadow-medium);
+  box-shadow: var(--shadow-medium); /* 0 10px 25px rgba(20, 106, 88, 0.2) */
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1s ease-out 0.6s both;
 }
 
-.btn::before {
+.hero .btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -314,19 +316,21 @@ nav {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(53, 53, 53, 0.2),
     transparent
   );
   transition: left 0.5s;
 }
 
-.btn:hover::before {
+.hero .btn:hover::before {
   left: 100%;
 }
 
-.btn:hover {
+.hero .btn:hover {
+  background: var(--gradient-primary); /* Ensure gradient persists on hover */
+  color: var(--text-light); /* White text on hover */
   transform: translateY(-3px) scale(1.05);
-  box-shadow: var(--shadow-heavy);
+  box-shadow: var(--shadow-heavy); /* 0 15px 35px rgba(20, 106, 88, 0.3) */
 }
 
 /* Sections */
@@ -860,19 +864,50 @@ section {
   resize: vertical;
 }
 
-.btn {
-  background: var(--accent-green);
-  color: white;
+.contact-form .btn {
+  display: inline-block;
+  background: var(
+    --gradient-primary
+  ); /* Uses linear-gradient(135deg, #3a67b1, #0097d7) */
+  color: var(--text-light); /* White text */
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium); /* 0 10px 25px rgba(20, 106, 88, 0.2) */
+  position: relative;
+  overflow: hidden;
 }
 
-.btn:hover {
-  background: #4aa88a;
+.contact-form .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(53, 53, 53, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.contact-form .btn:hover::before {
+  left: 100%;
+}
+
+.contact-form .btn:hover {
+  background: var(--gradient-primary); /* Maintain gradient on hover */
+  color: var(--text-light); /* White text on hover */
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-heavy); /* 0 15px 35px rgba(20, 106, 88, 0.3) */
 }
 
 .error-message,
