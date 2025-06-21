@@ -81,6 +81,7 @@ nav {
   display: flex;
   list-style: none;
   gap: 1rem;
+  transition: all 0.3s ease;
 }
 
 .nav-links a {
@@ -100,7 +101,7 @@ nav {
 }
 
 .menu-toggle {
-  display: none; /* Hidden by default on larger screens */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -130,10 +131,10 @@ nav {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Hero Section - Fixed */
+/* Hero Section */
 .hero {
   min-height: 100vh;
-  margin-top: 80px; /* Account for fixed nav */
+  margin-top: 80px;
   position: relative;
   display: flex;
   align-items: center;
@@ -288,10 +289,8 @@ nav {
 
 .hero .btn {
   display: inline-block;
-  background: var(
-    --gradient-primary
-  ); /* Uses linear-gradient(135deg, #3a67b1, #0097d7) */
-  color: var(--text-light); /* White text */
+  background: var(--gradient-primary);
+  color: var(--text-light);
   padding: 1rem 2.5rem;
   border: none;
   border-radius: 50px;
@@ -300,7 +299,7 @@ nav {
   font-size: 1.1rem;
   text-decoration: none;
   transition: all 0.4s ease;
-  box-shadow: var(--shadow-medium); /* 0 10px 25px rgba(20, 106, 88, 0.2) */
+  box-shadow: var(--shadow-medium);
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1s ease-out 0.6s both;
@@ -327,10 +326,10 @@ nav {
 }
 
 .hero .btn:hover {
-  background: var(--gradient-primary); /* Ensure gradient persists on hover */
-  color: var(--text-light); /* White text on hover */
+  background: var(--gradient-primary);
+  color: var(--text-light);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: var(--shadow-heavy); /* 0 15px 35px rgba(20, 106, 88, 0.3) */
+  box-shadow: var(--shadow-heavy);
 }
 
 /* Sections */
@@ -675,12 +674,10 @@ section {
   max-width: 280px;
 }
 
-/* First row with 3 cards */
 .team-row-3 .team-card {
   flex: 0 1 calc(33.333% - 2rem);
 }
 
-/* Second row with 4 cards */
 .team-row-4 .team-card {
   flex: 0 1 calc(25% - 2rem);
 }
@@ -751,34 +748,6 @@ section {
   color: var(--text-dark);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .team-row-3 .team-card {
-    flex: 0 1 calc(50% - 2rem);
-  }
-
-  .team-row-4 .team-card {
-    flex: 0 1 calc(50% - 2rem);
-  }
-
-  .team-row {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 768px) {
-  .team-row-3 .team-card,
-  .team-row-4 .team-card {
-    flex: 0 1 100%;
-  }
-
-  .team-row {
-    gap: 1rem;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 /* Contact Section */
 .contact {
   background-image: linear-gradient(
@@ -787,7 +756,7 @@ section {
       rgba(86, 189, 163, 0.5)
     ),
     linear-gradient(135deg, rgba(237, 190, 56, 0.5), rgba(86, 189, 163, 0.5)),
-    url("triangles.jpg"); /* Replace with your triangles.jpg path */
+    url("triangles.jpg");
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
@@ -866,10 +835,8 @@ section {
 
 .contact-form .btn {
   display: inline-block;
-  background: var(
-    --gradient-primary
-  ); /* Uses linear-gradient(135deg, #3a67b1, #0097d7) */
-  color: var(--text-light); /* White text */
+  background: var(--gradient-primary);
+  color: var(--text-light);
   padding: 0.8rem 1.5rem;
   border: none;
   border-radius: 8px;
@@ -878,7 +845,7 @@ section {
   cursor: pointer;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: var(--shadow-medium); /* 0 10px 25px rgba(20, 106, 88, 0.2) */
+  box-shadow: var(--shadow-medium);
   position: relative;
   overflow: hidden;
 }
@@ -904,10 +871,10 @@ section {
 }
 
 .contact-form .btn:hover {
-  background: var(--gradient-primary); /* Maintain gradient on hover */
-  color: var(--text-light); /* White text on hover */
+  background: var(--gradient-primary);
+  color: var(--text-light);
   transform: translateY(-2px) scale(1.05);
-  box-shadow: var(--shadow-heavy); /* 0 15px 35px rgba(20, 106, 88, 0.3) */
+  box-shadow: var(--shadow-heavy);
 }
 
 .error-message,
@@ -982,27 +949,46 @@ footer {
 @media (max-width: 1024px) {
   .about-item {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .about-item p {
     margin-top: 1rem;
   }
 
+  .inline-image,
+  .inline-image-manouba {
+    width: 100px;
+  }
+
   .contact-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .team-row-3 .team-card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+
+  .team-row-4 .team-card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+
+  .team-row {
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 768px) {
   nav {
     height: 60px;
+    padding: 0.5rem 3%;
   }
 
   .hero {
-    margin-top: 60px;
-    min-height: 80vh;
+    margin-top: auto;
+    min-height: auto;
+    padding-top: 60px;
   }
 
   .logo img {
@@ -1011,12 +997,12 @@ footer {
   }
 
   .menu-toggle {
-    display: flex; /* Show menu toggle on mobile */
+    display: flex;
   }
 
   .nav-links {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 0;
     width: 100%;
@@ -1025,15 +1011,26 @@ footer {
     align-items: center;
     padding: 1rem 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   .nav-links.active {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-links a {
     padding: 0.8rem;
     font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 3rem 1.5rem;
   }
 
   .hero h1 {
@@ -1055,13 +1052,12 @@ footer {
   }
 
   .activities-grid,
-  .programmes-grid,
-  .team-grid {
+  .programmes-grid {
     grid-template-columns: 1fr;
   }
 
   section {
-    padding: 4rem 5%;
+    padding: 4rem 3%;
   }
 
   .section-title {
@@ -1069,18 +1065,44 @@ footer {
   }
 
   .inline-image,
+  .inline-image-manouba,
   .team-image {
-    width: 100px;
+    width: 90px;
   }
 
-  .team-card img {
-    height: 180px; /* Slightly smaller on mobile */
+  .team-card .img-container,
+  .img-container img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .team-row-3 .team-card,
+  .team-row-4 .team-card {
+    flex: 1 1 100%;
+  }
+
+  .team-row {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-tagline {
@@ -1088,19 +1110,23 @@ footer {
   }
 
   .hero p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
-  .btn {
+  .hero .btn {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
     width: 100%;
     max-width: 250px;
   }
 
-  .activity-image,
-  .team-card img {
-    height: 150px; /* Further adjust for smaller screens */
+  .activities-grid,
+  .programmes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .activity-image {
+    height: 250px;
   }
 
   .section-title {
@@ -1108,7 +1134,47 @@ footer {
   }
 
   .inline-image,
+  .inline-image-manouba,
   .team-image {
     width: 80px;
+  }
+
+  .team-card .img-container,
+  .img-container img {
+    width: 180px;
+    height: 180px;
+  }
+
+  section {
+    padding: 3rem 3%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-form .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .footer-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
   }
 }
