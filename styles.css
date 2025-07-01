@@ -446,6 +446,16 @@ section {
   width: 180px;
   height: auto;
 }
+img[src="jciInter.png"] {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  object-position: center; /* Center the image within the container */
+}
 
 /* Activities Section */
 .activities {
@@ -563,6 +573,7 @@ section {
 }
 
 /* Programmes Section */
+/* Programmes Section */
 .programmes {
   background: var(--light-bg);
 }
@@ -628,8 +639,13 @@ section {
   transition: color 0.3s ease;
 }
 
-.programme-features li::before {
-  content: "✔️";
+.programme-features li:hover {
+  color: var(--text-dark);
+}
+
+/* Unique emojis for each programme card */
+.programmes-grid .programme-card:nth-child(1) .programme-features li::before {
+  content: "🚀"; /* JCI CYE: Rocket for entrepreneurship and innovation */
   position: absolute;
   left: 0;
   color: var(--primary-green);
@@ -637,8 +653,49 @@ section {
   font-size: 1.1rem;
 }
 
-.programme-features li:hover {
-  color: var(--text-dark);
+.programmes-grid .programme-card:nth-child(2) .programme-features li::before {
+  content: "🏆"; /* JCI TOYP: Trophy for recognizing young leaders */
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.programmes-grid .programme-card:nth-child(3) .programme-features li::before {
+  content: "🎤"; /* Débat & Art Oratoire: Microphone for public speaking */
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.programmes-grid .programme-card:nth-child(4) .programme-features li::before {
+  content: "⚙️"; /* 100% Efficacité: Gear for efficiency and optimization */
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.programmes-grid .programme-card:nth-child(5) .programme-features li::before {
+  content: "🌟"; /* Récompenses: Star for celebrating achievements */
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.programmes-grid .programme-card:nth-child(6) .programme-features li::before {
+  content: "🌍"; /* Thème National JCI RISE: Globe for sustainability and global impact */
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /* Team Section */
@@ -694,8 +751,7 @@ section {
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+  overflow: hidden; /* Ensure content doesn't spill outside the circle */
   transition: transform 0.6s ease;
   box-shadow: var(--shadow-light);
   border: 3px solid rgba(20, 106, 88, 0.1);
@@ -703,15 +759,32 @@ section {
 }
 
 .img-container img {
-  width: 280px;
-  height: 280px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain; /* Changed from cover to contain to ensure full image visibility */
+  object-position: center; /* Center the image */
   transition: transform 0.6s ease;
-  box-shadow: var(--shadow-light);
+  box-shadow: none; /* Remove redundant shadow as it's on the container */
   margin: 0 auto;
   display: block;
+}
+
+img[src="Ragheb Bhihi png.png"] {
+  width: 115%;
+  height: 115%;
+}
+img[src="Koussay_Boubaker-removebg-preview.png"] {
+  width: 132%;
+  height: 132%;
+}
+img[src="Nbail Saadaoui (1).png"] {
+  width: 100%;
+  height: 100%;
+}
+img[src="Cyrine Achouri (1).png"] {
+  width: 100%;
+  height: 100%;
 }
 
 .img-container:hover {
